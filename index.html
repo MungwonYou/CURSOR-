@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="유명원 — Economic Diplomat. 국제경제 협력, 통상 협상, 개발금융 전문 포트폴리오" />
+  <title>유명원 | Economic Diplomat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            diplomatic: {
+              950: '#0c1424',
+              900: '#121f35',
+              800: '#1a2d4a',
+              700: '#243b5c',
+            },
+            burgundy: {
+              700: '#6b1c2a',
+              600: '#8b2436',
+              500: '#a83045',
+            },
+            gold: {
+              300: '#dcc99a',
+              400: '#c9a962',
+              500: '#b8943f',
+              600: '#96752e',
+            },
+            ivory: '#faf8f3',
+            parchment: '#f0ebe0',
+            memo: '#e8e2d4',
+          },
+          fontFamily: {
+            ceremonial: ['Cinzel', 'serif'],
+            display: ['Playfair Display', 'serif'],
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Noto Sans KR', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-sans text-diplomatic-900 bg-ivory antialiased">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="nav-inner max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#hero" class="nav-brand flex items-center gap-3 group">
+        <svg class="nav-crest w-9 h-9 text-gold-400 shrink-0" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1"/>
+          <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+          <path d="M24 8 L28 16 L36 16 L30 22 L32 30 L24 26 L16 30 L18 22 L12 16 L20 16 Z" stroke="currentColor" stroke-width="1" fill="none"/>
+          <circle cx="24" cy="24" r="4" stroke="currentColor" stroke-width="0.75"/>
+          <path d="M8 24 Q24 14 40 24" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+          <path d="M8 24 Q24 34 40 24" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+        </svg>
+        <div>
+          <span class="block font-ceremonial text-sm font-semibold tracking-[0.2em] text-white">Y.M.YOO</span>
+          <span class="block text-[10px] tracking-[0.3em] uppercase text-gold-400/70">Diplomatic Portfolio</span>
+        </div>
+      </a>
+      <ul class="hidden md:flex items-center gap-1 text-xs font-ceremonial tracking-[0.15em] uppercase">
+        <li><a href="#profile" class="nav-link">Profile</a></li>
+        <li><span class="nav-separator">◆</span></li>
+        <li><a href="#skills" class="nav-link">Competencies</a></li>
+        <li><span class="nav-separator">◆</span></li>
+        <li><a href="#experience" class="nav-link">Postings</a></li>
+        <li><span class="nav-separator">◆</span></li>
+        <li><a href="#education" class="nav-link">Credentials</a></li>
+        <li><span class="nav-separator">◆</span></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button id="menu-toggle" class="md:hidden text-gold-400 p-2" aria-label="메뉴 열기">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-diplomatic-950/98 backdrop-blur-md border-t border-gold-400/20">
+      <ul class="px-6 py-5 space-y-3 text-xs font-ceremonial tracking-[0.15em] uppercase">
+        <li><a href="#profile" class="mobile-link block py-2 text-white/80 hover:text-gold-400 transition-colors">Profile</a></li>
+        <li><a href="#skills" class="mobile-link block py-2 text-white/80 hover:text-gold-400 transition-colors">Competencies</a></li>
+        <li><a href="#experience" class="mobile-link block py-2 text-white/80 hover:text-gold-400 transition-colors">Postings</a></li>
+        <li><a href="#education" class="mobile-link block py-2 text-white/80 hover:text-gold-400 transition-colors">Credentials</a></li>
+        <li><a href="#contact" class="mobile-link block py-2 text-white/80 hover:text-gold-400 transition-colors">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-diplomatic-950">
+    <div class="hero-globe absolute inset-0" aria-hidden="true"></div>
+    <div class="hero-pattern absolute inset-0"></div>
+    <div class="hero-vignette absolute inset-0"></div>
+
+    <!-- Decorative corners -->
+    <div class="hero-frame absolute inset-6 md:inset-12 pointer-events-none" aria-hidden="true">
+      <span class="frame-corner frame-tl"></span>
+      <span class="frame-corner frame-tr"></span>
+      <span class="frame-corner frame-bl"></span>
+      <span class="frame-corner frame-br"></span>
+    </div>
+
+    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+      <!-- Diplomatic Crest -->
+      <div class="hero-crest mx-auto mb-8 opacity-0">
+        <svg class="w-20 h-20 md:w-24 md:h-24 mx-auto text-gold-400" viewBox="0 0 80 80" fill="none">
+          <circle cx="40" cy="40" r="38" stroke="currentColor" stroke-width="1"/>
+          <circle cx="40" cy="40" r="34" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+          <path d="M40 12 C40 12 28 22 28 34 C28 42 33 48 40 48 C47 48 52 42 52 34 C52 22 40 12 40 12Z" stroke="currentColor" stroke-width="1" fill="none"/>
+          <path d="M40 48 L40 58" stroke="currentColor" stroke-width="1"/>
+          <path d="M32 58 L48 58" stroke="currentColor" stroke-width="1"/>
+          <path d="M34 62 L46 62" stroke="currentColor" stroke-width="0.75"/>
+          <ellipse cx="40" cy="40" rx="22" ry="10" stroke="currentColor" stroke-width="0.5" opacity="0.3" transform="rotate(-20 40 40)"/>
+          <ellipse cx="40" cy="40" rx="22" ry="10" stroke="currentColor" stroke-width="0.5" opacity="0.3" transform="rotate(20 40 40)"/>
+        </svg>
+      </div>
+
+      <p class="hero-subtitle font-ceremonial text-gold-400 text-xs md:text-sm tracking-[0.4em] uppercase mb-4 opacity-0">
+        Official Portfolio
+      </p>
+      <h1 class="hero-title font-display text-5xl md:text-7xl font-bold text-ivory mb-3 opacity-0">
+        유명원
+      </h1>
+      <p class="hero-name-en font-ceremonial text-sm md:text-base text-gold-300/80 tracking-[0.35em] uppercase mb-6 opacity-0">
+        Myungwon Yoo
+      </p>
+
+      <div class="hero-ornament flex items-center justify-center gap-4 mb-6 opacity-0">
+        <span class="ornament-line"></span>
+        <span class="ornament-diamond">◆</span>
+        <span class="ornament-line"></span>
+      </div>
+
+      <p class="hero-role font-serif text-2xl md:text-3xl text-ivory/90 italic mb-2 opacity-0">
+        Economic Diplomat
+      </p>
+      <p class="hero-motto font-ceremonial text-xs md:text-sm text-gold-400/60 tracking-[0.25em] uppercase mb-10 opacity-0">
+        Bridging Nations Through Economic Cooperation
+      </p>
+
+      <p class="hero-desc text-ivory/50 text-sm md:text-base max-w-xl mx-auto leading-relaxed mb-12 opacity-0">
+        국제경제 협력 · 통상 협상 · 개발금융
+      </p>
+
+      <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center opacity-0">
+        <a href="#profile" class="btn-diplomatic">Official Profile</a>
+        <a href="#contact" class="btn-diplomatic-outline">Establish Contact</a>
+      </div>
+
+      <p class="hero-location mt-12 font-ceremonial text-[10px] tracking-[0.3em] uppercase text-ivory/30 opacity-0">
+        Seoul · Republic of Korea
+      </p>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+      <a href="#profile" class="scroll-indicator text-gold-400/40 hover:text-gold-400 transition-colors" aria-label="아래로 스크롤">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Profile -->
+    <section id="profile" class="py-24 md:py-32 px-6 section-divider-top">
+      <div class="max-w-5xl mx-auto">
+        <div class="diplomatic-memo reveal">
+          <div class="memo-header">
+            <div class="memo-seal" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" class="w-full h-full text-burgundy-600">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1"/>
+                <path d="M20 8 L22 14 L28 14 L23 18 L25 24 L20 20 L15 24 L17 18 L12 14 L18 14 Z" stroke="currentColor" stroke-width="0.75" fill="none"/>
+              </svg>
+            </div>
+            <div>
+              <span class="section-label">Diplomatic Profile</span>
+              <h2 class="font-display text-3xl md:text-4xl font-bold text-diplomatic-900 mt-2">Official Statement</h2>
+            </div>
+            <div class="memo-ref hidden sm:block">
+              <span class="text-[10px] font-ceremonial tracking-widest uppercase text-diplomatic-700/40">Ref. No.</span>
+              <span class="block font-ceremonial text-sm text-diplomatic-700/60 tracking-wider">DP-2026-001</span>
+            </div>
+          </div>
+          <div class="memo-body">
+            <p class="text-lg leading-[1.9] text-diplomatic-800/85 font-light first-letter:text-4xl first-letter:font-display first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-burgundy-600">
+              국제경제 협력, 통상 협상, 개발금융 분야를 중심으로 국가 간 경제적 이해관계를 조율하는
+              <strong class="font-medium text-diplomatic-900">경제외교관</strong>을 목표로 합니다.
+              데이터 기반 분석과 균형 잡힌 협상 전략을 통해 복잡한 글로벌 이슈를 실질적인 정책 성과로
+              연결하는 데 강점이 있습니다.
+            </p>
+            <p class="text-lg leading-[1.9] text-diplomatic-800/85 font-light mt-6">
+              공공성과 실용성을 함께 중시하며, 국가 경쟁력 강화와 지속 가능한 국제 협력에 기여하는 것을
+              비전으로 삼고 있습니다. 다양한 이해관계자와의 협업을 통해 문제의 본질을 파악하고,
+              신뢰를 바탕으로 해결책을 도출하는 방식으로 일합니다.
+            </p>
+          </div>
+          <div class="memo-footer">
+            <span class="font-ceremonial text-[10px] tracking-[0.2em] uppercase text-diplomatic-700/40">Issued in good faith</span>
+            <span class="font-serif italic text-diplomatic-700/60">유명원</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Languages -->
+    <section id="skills" class="py-24 md:py-32 px-6 bg-parchment diplomatic-texture">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <span class="section-label">Core Competencies</span>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-diplomatic-900 mt-3">Professional Capabilities</h2>
+          <div class="section-ornament mx-auto mt-4"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10 md:gap-14">
+          <div class="competency-panel reveal reveal-delay-1">
+            <div class="panel-header">
+              <svg class="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              <h3 class="font-ceremonial text-sm tracking-[0.15em] uppercase text-diplomatic-800">Policy & Analysis</h3>
+            </div>
+            <div class="space-y-5 mt-6">
+              <div class="skill-item">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="font-medium text-diplomatic-800">국제경제 분석</span>
+                  <span class="proficiency-badge">Expert</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="100"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="font-medium text-diplomatic-800">통상 협상 전략</span>
+                  <span class="proficiency-badge">Advanced</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="font-medium text-diplomatic-800">정책 보고서 작성</span>
+                  <span class="proficiency-badge">Expert</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="100"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="competency-panel reveal reveal-delay-2">
+            <div class="panel-header">
+              <svg class="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+              </svg>
+              <h3 class="font-ceremonial text-sm tracking-[0.15em] uppercase text-diplomatic-800">Linguistic Proficiency</h3>
+            </div>
+            <div class="space-y-4 mt-6">
+              <div class="lang-card">
+                <div class="lang-flag lang-flag-ko"></div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-baseline">
+                    <span class="font-display text-lg text-diplomatic-900">Korean</span>
+                    <span class="star-rating text-gold-500" data-level="5"></span>
+                  </div>
+                  <span class="text-xs text-diplomatic-700/60 tracking-wide">Native · 모국어</span>
+                </div>
+              </div>
+              <div class="lang-card">
+                <div class="lang-flag lang-flag-en"></div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-baseline">
+                    <span class="font-display text-lg text-diplomatic-900">English</span>
+                    <span class="star-rating text-gold-500" data-level="5"></span>
+                  </div>
+                  <span class="text-xs text-diplomatic-700/60 tracking-wide">Fluent · Diplomatic Working Language</span>
+                </div>
+              </div>
+              <div class="lang-card">
+                <div class="lang-flag lang-flag-fr"></div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-baseline">
+                    <span class="font-display text-lg text-diplomatic-900">French</span>
+                    <span class="star-rating text-gold-500" data-level="4"></span>
+                  </div>
+                  <span class="text-xs text-diplomatic-700/60 tracking-wide">Advanced · Langue de travail</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section id="experience" class="py-24 md:py-32 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-16 reveal">
+          <span class="section-label">Service Record</span>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-diplomatic-900 mt-3">Diplomatic Postings</h2>
+          <div class="section-ornament mt-4"></div>
+        </div>
+        <div class="postings-list space-y-8">
+          <article class="posting-card reveal">
+            <div class="posting-header">
+              <div class="posting-badge">Current Posting</div>
+              <time class="posting-date">2024.03 — 2026.06</time>
+            </div>
+            <h3 class="font-display text-xl md:text-2xl font-semibold text-diplomatic-900 mt-4">
+              Global Trade Strategy Institute
+            </h3>
+            <p class="posting-title">Economic Policy Analyst</p>
+            <div class="posting-divider"></div>
+            <p class="text-diplomatic-800/75 leading-relaxed text-[15px]">
+              국제 통상 환경 변화와 주요국 경제 정책을 분석하여 정부 및 공공기관 대상 정책 보고서를 작성했습니다.
+              공급망 재편, 무역 규제, 관세 정책 변화에 대한 리서치를 수행하고, 협상 전략 수립을 위한 핵심 데이터를 정리했습니다.
+              이해관계자 회의 자료와 브리핑 문서를 제작하며 정책 의사결정을 지원했습니다.
+            </p>
+          </article>
+
+          <article class="posting-card reveal reveal-delay-1">
+            <div class="posting-header">
+              <div class="posting-badge posting-badge-past">Previous Posting</div>
+              <time class="posting-date">2022.01 — 2024.02</time>
+            </div>
+            <h3 class="font-display text-xl md:text-2xl font-semibold text-diplomatic-900 mt-4">
+              Korea International Cooperation Forum
+            </h3>
+            <p class="posting-title">International Cooperation Coordinator</p>
+            <div class="posting-divider"></div>
+            <p class="text-diplomatic-800/75 leading-relaxed text-[15px]">
+              개발도상국과의 경제 협력 프로젝트를 기획하고, 국제기구 및 민간 파트너와의 협력 체계를 관리했습니다.
+              개발금융, 인프라 투자, 지속 가능 성장 관련 세미나를 운영하며 국가 간 협력 의제를 구체화했습니다.
+              프로젝트 성과를 정리한 보고서를 작성하고, 후속 협력 방안을 제안했습니다.
+            </p>
+          </article>
+
+          <article class="posting-card reveal reveal-delay-2">
+            <div class="posting-header">
+              <div class="posting-badge posting-badge-past">Previous Posting</div>
+              <time class="posting-date">2020.03 — 2021.12</time>
+            </div>
+            <h3 class="font-display text-xl md:text-2xl font-semibold text-diplomatic-900 mt-4">
+              Asia-Pacific Economic Partnership Office
+            </h3>
+            <p class="posting-title">Junior Trade Affairs Associate</p>
+            <div class="posting-divider"></div>
+            <p class="text-diplomatic-800/75 leading-relaxed text-[15px]">
+              아시아·태평양 지역의 경제 협력 회의 준비와 통상 현안 자료 조사를 담당했습니다.
+              국가별 산업 정책, 투자 규제, 시장 개방 동향을 분석하여 회의 의제 설정을 지원했습니다.
+              외교 문서 초안 작성과 회의록 정리를 수행하며 국제 협상 실무 역량을 쌓았습니다.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="py-24 md:py-32 px-6 bg-diplomatic-900 text-ivory relative overflow-hidden">
+      <div class="credentials-bg absolute inset-0" aria-hidden="true"></div>
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-16 reveal">
+          <span class="section-label text-gold-400">Academic Credentials</span>
+          <h2 class="font-display text-3xl md:text-4xl font-bold mt-3">Formal Qualifications</h2>
+          <div class="section-ornament section-ornament-light mx-auto mt-4"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <article class="credential-card reveal">
+            <div class="credential-seal" aria-hidden="true">
+              <span class="font-ceremonial text-[9px] tracking-widest text-gold-400/60">SNU</span>
+            </div>
+            <span class="credential-degree font-ceremonial text-[10px] tracking-[0.2em] uppercase text-gold-400">Master's Degree</span>
+            <h3 class="font-display text-xl md:text-2xl font-semibold mt-3 mb-1">Master of Public Policy</h3>
+            <p class="text-gold-300 font-medium text-sm mb-1">Seoul National University</p>
+            <p class="text-ivory/50 text-sm mb-4">International Economic Policy</p>
+            <time class="font-ceremonial text-xs text-ivory/30 tracking-wider">2020.03 — 2022.02</time>
+          </article>
+          <article class="credential-card reveal reveal-delay-1">
+            <div class="credential-seal" aria-hidden="true">
+              <span class="font-ceremonial text-[9px] tracking-widest text-gold-400/60">YU</span>
+            </div>
+            <span class="credential-degree font-ceremonial text-[10px] tracking-[0.2em] uppercase text-gold-400">Bachelor's Degree</span>
+            <h3 class="font-display text-xl md:text-2xl font-semibold mt-3 mb-1">Bachelor of Arts</h3>
+            <p class="text-gold-300 font-medium text-sm mb-1">Yonsei University</p>
+            <p class="text-ivory/50 text-sm mb-4">International Studies</p>
+            <time class="font-ceremonial text-xs text-ivory/30 tracking-wider">2016.03 — 2020.02</time>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 md:py-32 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-14 reveal">
+          <span class="section-label">Diplomatic Channel</span>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-diplomatic-900 mt-3">Establish Contact</h2>
+          <div class="section-ornament mx-auto mt-4"></div>
+          <p class="text-diplomatic-700/70 text-base mt-6 max-w-lg mx-auto">
+            국제 경제 협력 및 통상 관련 프로젝트, 협업 문의를 환영합니다.
+          </p>
+        </div>
+        <div class="contact-dispatch reveal reveal-delay-1">
+          <div class="dispatch-header">
+            <span class="font-ceremonial text-[10px] tracking-[0.25em] uppercase text-diplomatic-700/50">Contact Information</span>
+          </div>
+          <div class="dispatch-grid">
+            <a href="tel:010-1234-1234" class="dispatch-item group">
+              <span class="dispatch-label">Telephone</span>
+              <span class="dispatch-value group-hover:text-burgundy-600 transition-colors">010-1234-1234</span>
+            </a>
+            <a href="mailto:myungwon.yoo@example.com" class="dispatch-item group">
+              <span class="dispatch-label">Electronic Mail</span>
+              <span class="dispatch-value group-hover:text-burgundy-600 transition-colors">myungwon.yoo@example.com</span>
+            </a>
+            <a href="http://www.myungwonyoo.com" target="_blank" rel="noopener noreferrer" class="dispatch-item group">
+              <span class="dispatch-label">Official Website</span>
+              <span class="dispatch-value group-hover:text-burgundy-600 transition-colors">www.myungwonyoo.com</span>
+            </a>
+            <div class="dispatch-item">
+              <span class="dispatch-label">Permanent Mission</span>
+              <span class="dispatch-value">Seoul, Republic of Korea</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 px-6 bg-diplomatic-950 border-t border-gold-400/10">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <svg class="w-8 h-8 text-gold-400/40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="0.75"/>
+            <path d="M24 10 L27 17 L34 17 L28 22 L30 29 L24 25 L18 29 L20 22 L14 17 L21 17 Z" stroke="currentColor" stroke-width="0.75" fill="none"/>
+          </svg>
+          <div>
+            <p class="font-ceremonial text-sm text-ivory/70 tracking-wider">유명원 · Myungwon Yoo</p>
+            <p class="text-[10px] text-ivory/30 tracking-[0.2em] uppercase mt-1">Economic Diplomat</p>
+          </div>
+        </div>
+        <p class="font-ceremonial text-[10px] text-ivory/25 tracking-[0.25em] uppercase text-center">
+          International Economic Cooperation &amp; Trade Diplomacy
+        </p>
+        <p class="text-ivory/20 text-xs">&copy; 2026 All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
