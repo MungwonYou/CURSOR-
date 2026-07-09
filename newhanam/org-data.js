@@ -1,8 +1,8 @@
 /** Organization chart data (names & structure from company profile) */
 const ORG_DATA = {
   taehwa: {
-    chairman: 'Mr. Choi W.H',
-    viceChairman: 'Mr. Cho U.H',
+    chairman: { name: 'Mr. Choi W.H', photo: 'choi-wh' },
+    viceChairman: { name: 'Mr. Cho U.H', photo: 'cho-uh' },
     centers: [
       { id: 'planning', key: 'businessPlanning' },
       { id: 'technical', key: 'technicalSupport' },
@@ -44,43 +44,43 @@ const ORG_DATA = {
         ['F. Goods WH', 23], ['Material WH', 15], ['Engineer', 10], ['Mold', 9], ['QC', 13],
       ],
     },
-    gm: { name: 'KIM SC', subtitle: 'New Hanam Vina' },
+    gm: { name: 'KIM SC', subtitle: 'New Hanam Vina', photo: 'kim-sc' },
     teams: [
       {
         key: 'productionTeam',
-        leader: { rankKey: 'seniorManager', name: 'LEE MC' },
+        leader: { rankKey: 'seniorManager', name: 'LEE MC', photo: 'lee-mc' },
         tone: 'prod',
         units: [
           {
             key: 'prodTeam1',
-            leader: { rankKey: 'manager', name: 'HAI' },
+            leader: { rankKey: 'manager', name: 'HAI', photo: 'hai' },
             tasks: ['Injection-CANH', 'Main Line-HAN', 'DD Motor-MANH', 'Press-TAO/KIEN', 'WM-TUNG/NHON'],
           },
           {
             key: 'prodTeam2',
-            leader: { rankKey: 'manager', name: 'HUNG' },
+            leader: { rankKey: 'manager', name: 'HUNG', photo: 'hung' },
             tasks: ['DC Motor-LONG', 'Stator-PHONG', 'Sub-assembly-LINH', 'AP3/NKS-TUNG'],
           },
           {
             key: 'prodControl',
-            leader: { rankKey: 'asstManager', name: 'TUAN' },
+            leader: { rankKey: 'asstManager', name: 'TUAN', photo: 'tuan' },
             tasks: ['Production planning', 'Weekly production plan I/UP', 'Weekly OT plan I/UP'],
           },
         ],
       },
       {
         key: 'supportTeam',
-        leader: { rankKey: 'manager', name: 'LEE JI' },
+        leader: { rankKey: 'manager', name: 'LEE JI', photo: 'lee-ji' },
         tone: 'support',
         units: [
-          { key: 'engineering', leader: { rankKey: 'asstManager', name: 'TINH' }, tasks: ['Equipment PM', 'Equipment PM-HUY'] },
-          { key: 'mold', leader: { rankKey: 'asstManager', name: 'TRONG' }, tasks: ['Press mold PM', 'Injection mold PM'] },
-          { key: 'salesTeam', leader: { rankKey: 'manager', name: 'THEM' }, tasks: ['SOP reception', 'Customer response', 'Customer delivery TRUONG'] },
-          { key: 'qc', leader: { rankKey: 'supervisor', name: 'PHUOC' }, tasks: ['QA-DEP', 'IQC-TUAN', 'Audi QC-CA', 'Injection OQC-HUNG'] },
-          { key: 'rndUnit', leader: { rankKey: 'asstManager', name: 'VU' }, tasks: ['New model I/UP'] },
+          { key: 'engineering', leader: { rankKey: 'asstManager', name: 'TINH', photo: 'tinh' }, tasks: ['Equipment PM', 'Equipment PM-HUY'] },
+          { key: 'mold', leader: { rankKey: 'asstManager', name: 'TRONG', photo: 'trong' }, tasks: ['Press mold PM', 'Injection mold PM'] },
+          { key: 'salesTeam', leader: { rankKey: 'manager', name: 'THEM', photo: 'them' }, tasks: ['SOP reception', 'Customer response', 'Customer delivery TRUONG'] },
+          { key: 'qc', leader: { rankKey: 'supervisor', name: 'PHUOC', photo: 'phuoc' }, tasks: ['QA-DEP', 'IQC-TUAN', 'Audi QC-CA', 'Injection OQC-HUNG'] },
+          { key: 'rndUnit', leader: { rankKey: 'asstManager', name: 'VU', photo: 'vu' }, tasks: ['New model I/UP'] },
           {
             key: 'innovation',
-            leader: { rankKey: 'deputyManager', name: 'TU' },
+            leader: { rankKey: 'deputyManager', name: 'TU', photo: 'tu' },
             tasks: ['HQ projects I/U', 'New Hanam Innovation I/U-NGA', 'ERP/Export-LINH', 'Improvement & Maintenance-CAN'],
           },
         ],
@@ -92,17 +92,17 @@ const ORG_DATA = {
         units: [
           {
             key: 'purchasing',
-            leader: { rankKey: 'asstManager', name: 'TUYET' },
+            leader: { rankKey: 'asstManager', name: 'TUYET', photo: 'tuyet' },
             tasks: ['Material purchase management', 'General purchase management', 'Press logistics-NHUT', 'JNJ logistics-PHUOC'],
           },
           {
             key: 'accounting',
-            leader: { rankKey: 'deputyManager', name: 'HIEN' },
+            leader: { rankKey: 'deputyManager', name: 'HIEN', photo: 'hien' },
             tasks: ['Accounting', 'Import/Export-TRINH', 'General accounting-HOA'],
           },
           {
             key: 'hrga',
-            leader: { rankKey: 'asstManager', name: 'DUY' },
+            leader: { rankKey: 'asstManager', name: 'DUY', photo: 'duy' },
             tasks: ['HR', 'General Affairs', 'IT/Systems'],
           },
         ],

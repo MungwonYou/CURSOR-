@@ -986,16 +986,48 @@ img {
 }
 
 .org-person {
-  text-align: center;
-  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-align: left;
+  padding: 0.85rem 1.25rem;
   border: 2px solid var(--nh-navy);
   background: var(--nh-sky);
-  min-width: 200px;
+  min-width: 240px;
 }
+
+.org-person-text { flex: 1; min-width: 0; }
 
 .org-person--chairman { background: linear-gradient(135deg, var(--nh-navy) 0%, #2a5a9e 100%); color: #fff; border-color: var(--nh-navy); }
 .org-person--chairman .org-role { color: rgba(255,255,255,0.75); }
 .org-person--vice { background: var(--nh-white); }
+
+.org-photo {
+  display: block;
+  width: 72px;
+  height: 84px;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--nh-border);
+  background: #f0f4f8;
+  flex-shrink: 0;
+}
+
+.org-person--chairman .org-photo,
+.org-person--vice .org-photo {
+  width: 64px;
+  height: 76px;
+  border-color: rgba(255,255,255,0.35);
+}
+
+.org-level--top .org-person {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+@media (max-width: 480px) {
+  .org-person { min-width: 0; width: 100%; max-width: 320px; }
+}
 
 .org-role {
   display: block;
@@ -1171,11 +1203,21 @@ img {
 }
 
 .nh-gm-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding: 1.25rem;
   background: linear-gradient(135deg, var(--nh-navy) 0%, #2a5a9e 100%);
   color: #fff;
   border-radius: 6px;
+}
+
+.nh-gm-card .org-photo {
+  width: 88px;
+  height: 100px;
+  margin-bottom: 0.65rem;
+  border-color: rgba(255,255,255,0.35);
 }
 
 .nh-gm-card strong {
@@ -1226,8 +1268,16 @@ img {
 .org-team--mgmt .org-team-header { background: #fff3e0; border-bottom-color: #ffcc80; }
 
 .org-team-leader {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
   font-size: 0.82rem;
   color: var(--nh-text-muted);
+}
+
+.org-team-leader .org-photo {
+  width: 56px;
+  height: 66px;
 }
 
 .org-team-leader strong {
@@ -1280,6 +1330,15 @@ img {
 .org-unit-head--prod { background: #f1f8f1; }
 .org-unit-head--support { background: #eef6fc; }
 .org-unit-head--mgmt { background: #fef6eb; }
+
+.org-unit > .org-photo {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  object-position: center top;
+  border: none;
+  border-bottom: 1px solid var(--nh-border);
+}
 
 .org-unit-body {
   padding: 0.65rem 0.75rem;

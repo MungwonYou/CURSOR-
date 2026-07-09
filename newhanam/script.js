@@ -73,6 +73,22 @@ function renderOrgCharts() {
   renderNewhanamOrg();
 }
 
+function orgPhoto(id, alt) {
+  if (!id) return '';
+  return `<img src="/newhanam/assets/people/${id}.png" alt="${alt || ''}" class="org-photo" loading="lazy" width="72" height="84" />`;
+}
+
+function orgPersonCard(roleKey, person, extraClass = '') {
+  return `
+    <div class="org-person ${extraClass}">
+      ${orgPhoto(person.photo, person.name)}
+      <div class="org-person-text">
+        <span class="org-role">${t(roleKey)}</span>
+        <strong>${person.name}</strong>
+      </div>
+    </div>`;
+}
+
 function renderTaehwaOrg() {
   const el = document.getElementById('taehwa-org');
   if (!el) return;
@@ -100,15 +116,9 @@ function renderTaehwaOrg() {
   el.innerHTML = `
     <div class="org-tree">
       <div class="org-level org-level--top">
-        <div class="org-person org-person--chairman">
-          <span class="org-role">${t('org.chairman')}</span>
-          <strong>${d.chairman}</strong>
-        </div>
+        ${orgPersonCard('org.chairman', d.chairman, 'org-person--chairman')}
         <div class="org-connector-v"></div>
-        <div class="org-person org-person--vice">
-          <span class="org-role">${t('org.viceChairman')}</span>
-          <strong>${d.viceChairman}</strong>
-        </div>
+        ${orgPersonCard('org.viceChairman', d.viceChairman, 'org-person--vice')}
       </div>
       <div class="org-level org-level--centers">
         ${d.centers.map((c) => `
@@ -141,7 +151,10 @@ function renderNewhanamOrg() {
 
   const teamsHtml = d.teams.map((team) => {
     const leaderHtml = team.leader
-      ? `<div class="org-team-leader"><span>${t(`org.${team.leader.rankKey}`)}</span><strong>${team.leader.name}</strong></div>`
+      ? `<div class="org-team-leader">
+          ${orgPhoto(team.leader.photo, team.leader.name)}
+          <div><span>${t(`org.${team.leader.rankKey}`)}</span><strong>${team.leader.name}</strong></div>
+        </div>`
       : '';
     const unitsHtml = team.units.map((unit) => `
       <article class="org-unit">
@@ -151,6 +164,7 @@ function renderNewhanamOrg() {
             <span>${t(`org.${unit.leader.rankKey}`)} · ${unit.leader.name}</span>
           </div>
         </header>
+        ${orgPhoto(unit.leader.photo, unit.leader.name)}
         <div class="org-unit-body">
           <span class="org-unit-label">${t('org.responsibilities')}</span>
           <ul>${unit.tasks.map((task) => `<li>${task}</li>`).join('')}</ul>
@@ -196,6 +210,7 @@ function renderNewhanamOrg() {
         </div>
       </div>
       <div class="nh-gm-card">
+        ${orgPhoto(d.gm.photo, d.gm.name)}
         <span class="org-role">${t('org.generalManager')}</span>
         <strong>${d.gm.name}</strong>
         <span class="nh-gm-sub">${d.gm.subtitle}</span>
