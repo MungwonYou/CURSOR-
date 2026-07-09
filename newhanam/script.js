@@ -59,12 +59,149 @@ function setLanguage(lang, save = true) {
 
 function renderDynamicContent() {
   renderHistory();
+  renderOrgCharts();
   renderAffiliates();
   renderProducts();
   renderEquipmentTables();
   renderCustomers();
   renderCertificates();
   initSalesChart();
+}
+
+function renderOrgCharts() {
+  renderTaehwaOrg();
+  renderNewhanamOrg();
+}
+
+function renderTaehwaOrg() {
+  const el = document.getElementById('taehwa-org');
+  if (!el) return;
+  const d = ORG_DATA.taehwa;
+
+  const domesticHtml = d.domestic.map((div) => `
+    <div class="org-division">
+      <div class="org-division-head">${t(`org.${div.key}`)} <span>(${div.count})</span></div>
+      <ul class="org-chip-list">${div.items.map((item) => `<li>${item}</li>`).join('')}</ul>
+    </div>
+  `).join('');
+
+  const overseasHtml = d.overseas.regions.map((region) => `
+    <div class="org-region">
+      <div class="org-region-head">${region.country}</div>
+      <ul class="org-chip-list">
+        ${region.items.map((item) => {
+          const hl = item === region.highlight ? ' org-chip--highlight' : '';
+          return `<li class="${hl}">${item}</li>`;
+        }).join('')}
+      </ul>
+    </div>
+  `).join('');
+
+  el.innerHTML = `
+    <div class="org-tree">
+      <div class="org-level org-level--top">
+        <div class="org-person org-person--chairman">
+          <span class="org-role">${t('org.chairman')}</span>
+          <strong>${d.chairman}</strong>
+        </div>
+        <div class="org-connector-v"></div>
+        <div class="org-person org-person--vice">
+          <span class="org-role">${t('org.viceChairman')}</span>
+          <strong>${d.viceChairman}</strong>
+        </div>
+      </div>
+      <div class="org-level org-level--centers">
+        ${d.centers.map((c) => `
+          <div class="org-center org-center--${c.id}">${t(`org.${c.key}`)}</div>
+        `).join('')}
+      </div>
+      <div class="org-split">
+        <div class="org-split-col">
+          <h4 class="org-split-title">${t('org.domestic')}</h4>
+          <div class="org-division-grid">${domesticHtml}</div>
+        </div>
+        <div class="org-split-col">
+          <h4 class="org-split-title">${t('org.overseas')} (${d.overseas.count})</h4>
+          <div class="org-region-grid">${overseasHtml}</div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderNewhanamOrg() {
+  const el = document.getElementById('newhanam-org');
+  if (!el) return;
+  const d = ORG_DATA.newhanam;
+  const hc = d.headcount;
+
+  const adminRows = hc.admin.map(([label, count]) => `<tr><td>${label}</td><td>${count}</td></tr>`).join('');
+  const p1Rows = hc.production1.items.map(([label, count]) => `<tr><td>${label}</td><td>${count}</td></tr>`).join('');
+  const p2Rows = hc.production2.items.map(([label, count]) => `<tr><td>${label}</td><td>${count}</td></tr>`).join('');
+  const supRows = hc.support.map(([label, count]) => `<tr><td>${label}</td><td>${count}</td></tr>`).join('');
+
+  const teamsHtml = d.teams.map((team) => {
+    const leaderHtml = team.leader
+      ? `<div class="org-team-leader"><span>${t(`org.${team.leader.rankKey}`)}</span><strong>${team.leader.name}</strong></div>`
+      : '';
+    const unitsHtml = team.units.map((unit) => `
+      <article class="org-unit">
+        <header class="org-unit-head org-unit-head--${team.tone}">
+          <div>
+            <h5>${t(`org.${unit.key}`)}</h5>
+            <span>${t(`org.${unit.leader.rankKey}`)} · ${unit.leader.name}</span>
+          </div>
+        </header>
+        <div class="org-unit-body">
+          <span class="org-unit-label">${t('org.responsibilities')}</span>
+          <ul>${unit.tasks.map((task) => `<li>${task}</li>`).join('')}</ul>
+        </div>
+      </article>
+    `).join('');
+
+    return `
+      <section class="org-team org-team--${team.tone}">
+        <header class="org-team-header">
+          <h4>${t(`org.${team.key}`)}</h4>
+          ${leaderHtml}
+        </header>
+        <div class="org-unit-grid">${unitsHtml}</div>
+      </section>`;
+  }).join('');
+
+  el.innerHTML = `
+    <div class="nh-org">
+      <div class="nh-org-meta">
+        <span>${t('org.effectiveDate')}: ${d.effectiveDate}</span>
+      </div>
+      <div class="nh-headcount">
+        <h4>${t('org.headcountTitle')} · ${t('org.headcountTotal')} <strong>${hc.total}</strong></h4>
+        <div class="nh-headcount-grid">
+          <div class="nh-hc-table">
+            <table class="data-table data-table--compact">
+              <tbody>${adminRows}</tbody>
+            </table>
+          </div>
+          <div class="nh-hc-table">
+            <div class="nh-hc-group-title">${t('org.production1Group')} (${hc.production1.total})</div>
+            <table class="data-table data-table--compact"><tbody>${p1Rows}</tbody></table>
+          </div>
+          <div class="nh-hc-table">
+            <div class="nh-hc-group-title">${t('org.production2Group')} (${hc.production2.total})</div>
+            <table class="data-table data-table--compact"><tbody>${p2Rows}</tbody></table>
+          </div>
+          <div class="nh-hc-table">
+            <div class="nh-hc-group-title">${t('org.supportGroup')}</div>
+            <table class="data-table data-table--compact"><tbody>${supRows}</tbody></table>
+          </div>
+        </div>
+      </div>
+      <div class="nh-gm-card">
+        <span class="org-role">${t('org.generalManager')}</span>
+        <strong>${d.gm.name}</strong>
+        <span class="nh-gm-sub">${d.gm.subtitle}</span>
+      </div>
+      <div class="nh-teams">${teamsHtml}</div>
+    </div>`;
 }
 
 function renderHistory() {
