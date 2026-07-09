@@ -8,15 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/newhanam/styles.css" />
 </head>
 <body>
 
   <nav id="navbar" class="navbar">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
-        <span class="logo-mark">NH</span>
-        <span>NEW-HANAM</span>
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/><text x="20" y="24" text-anchor="middle" font-size="11" font-weight="700" fill="currentColor">NH</text></svg>
+        </span>
+        <span class="nav-logo-text">NEW-HANAM</span>
       </a>
       <ul class="nav-links">
         <li><a href="#company" class="nav-link" data-i18n="nav.company">Company</a></li>
@@ -59,19 +61,23 @@
   </nav>
 
   <header id="hero" class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="container hero-content reveal">
+    <div class="hero-sky" aria-hidden="true"></div>
+    <div class="container hero-top reveal">
       <p class="hero-badge" data-i18n="hero.badge">Company Profile 2026</p>
       <h1 class="hero-title" data-i18n="hero.title">NEW-HANAM</h1>
       <p class="hero-subtitle" data-i18n="hero.subtitle">Driven by Precision. Powered by Commitment.</p>
       <p class="hero-update" data-i18n="hero.update">Update: 10.06.2026</p>
-      <a href="#company" class="btn-primary" data-i18n="hero.cta">Explore Profile</a>
+    </div>
+    <div class="hero-building reveal">
+      <img src="/newhanam/assets/slide-01.png" alt="NEW-HANAM factory" class="hero-building-img" fetchpriority="high" />
     </div>
     <div class="hero-stats container reveal">
       <div class="stat-box"><span class="stat-num">395</span><span class="stat-label">Employees</span></div>
       <div class="stat-box"><span class="stat-num">30,000㎡</span><span class="stat-label">Land Area</span></div>
       <div class="stat-box"><span class="stat-num">2015</span><span class="stat-label">Established</span></div>
+    </div>
+    <div class="hero-bar" aria-hidden="true">
+      <span class="hero-bar-text">NEW-HANAM CO., LTD.</span>
     </div>
   </header>
 
@@ -117,7 +123,7 @@
           </div>
         </div>
         <figure class="slide-figure reveal">
-          <img src="assets/slide-03.png" alt="Company Information" loading="lazy" />
+          <img src="/newhanam/assets/slide-03.png" alt="Company Information" loading="lazy" />
           <figcaption data-i18n="slide">Original slide</figcaption>
         </figure>
       </div>
@@ -131,7 +137,7 @@
         </div>
         <div id="history-list" class="history-list"></div>
         <figure class="slide-figure reveal">
-          <img src="assets/slide-04.png" alt="Company History" loading="lazy" />
+          <img src="/newhanam/assets/slide-04.png" alt="Company History" loading="lazy" />
           <figcaption data-i18n="slide">Original slide</figcaption>
         </figure>
       </div>
@@ -147,14 +153,14 @@
           <h3 class="org-title" data-i18n="org.taehwaTitle">Organization Chart – Taehwa Group</h3>
           <p class="org-desc" data-i18n="org.taehwaDesc">Global manufacturing network across domestic and overseas subsidiaries.</p>
           <figure class="slide-figure">
-            <img src="assets/slide-05.png" alt="Taehwa Group Organization" loading="lazy" />
+            <img src="/newhanam/assets/slide-05.png" alt="Taehwa Group Organization" loading="lazy" />
           </figure>
         </div>
         <div class="org-block reveal">
           <h3 class="org-title" data-i18n="org.newhanamTitle">Organization Chart: NEW-HANAM</h3>
           <p class="org-desc" data-i18n="org.newhanamDesc">Operational structure of NEW-HANAM Vietnam.</p>
           <figure class="slide-figure">
-            <img src="assets/slide-06.png" alt="NEW-HANAM Organization" loading="lazy" />
+            <img src="/newhanam/assets/slide-06.png" alt="NEW-HANAM Organization" loading="lazy" />
           </figure>
         </div>
       </div>
@@ -171,14 +177,14 @@
             <h3 data-i18n="affiliates.domesticTitle">Affiliated Companies (Domestic)</h3>
             <ul id="affiliates-domestic" class="affiliate-list"></ul>
             <figure class="slide-figure slide-figure--sm">
-              <img src="assets/slide-07.png" alt="Domestic Affiliates" loading="lazy" />
+              <img src="/newhanam/assets/slide-07.png" alt="Domestic Affiliates" loading="lazy" />
             </figure>
           </div>
           <div class="affiliate-col">
             <h3 data-i18n="affiliates.overseasTitle">Affiliated Companies (Overseas)</h3>
             <ul id="affiliates-overseas" class="affiliate-list"></ul>
             <figure class="slide-figure slide-figure--sm">
-              <img src="assets/slide-08.png" alt="Overseas Affiliates" loading="lazy" />
+              <img src="/newhanam/assets/slide-08.png" alt="Overseas Affiliates" loading="lazy" />
             </figure>
           </div>
         </div>
@@ -193,7 +199,7 @@
         </div>
         <div id="products-grid" class="products-grid"></div>
         <figure class="slide-figure reveal">
-          <img src="assets/slide-09.png" alt="Main Products" loading="lazy" />
+          <img src="/newhanam/assets/slide-09.png" alt="Main Products" loading="lazy" />
           <figcaption data-i18n="slide">Original slide</figcaption>
         </figure>
       </div>
@@ -208,7 +214,7 @@
         </div>
         <div id="sales-chart" class="sales-chart reveal"></div>
         <figure class="slide-figure reveal">
-          <img src="assets/slide-10.png" alt="Annual Sales" loading="lazy" />
+          <img src="/newhanam/assets/slide-10.png" alt="Annual Sales" loading="lazy" />
           <figcaption data-i18n="slide">Original slide</figcaption>
         </figure>
       </div>
@@ -226,21 +232,21 @@
           <div id="equipment-process" class="table-wrap"></div>
         </div>
         <figure class="slide-figure reveal">
-          <img src="assets/slide-11.png" alt="Equipment" loading="lazy" />
+          <img src="/newhanam/assets/slide-11.png" alt="Equipment" loading="lazy" />
         </figure>
         <div class="equip-grid reveal">
           <div>
             <h3 class="equip-subtitle" data-i18n="equipment.measureTitle">Measuring Instruments</h3>
             <div id="equipment-measure" class="table-wrap"></div>
             <figure class="slide-figure slide-figure--sm">
-              <img src="assets/slide-12.png" alt="Measuring Equipment" loading="lazy" />
+              <img src="/newhanam/assets/slide-12.png" alt="Measuring Equipment" loading="lazy" />
             </figure>
           </div>
           <div>
             <h3 class="equip-subtitle" data-i18n="equipment.gaugeTitle">Go-No Gages & Time Test Jig</h3>
             <div id="equipment-gauge" class="table-wrap"></div>
             <figure class="slide-figure slide-figure--sm">
-              <img src="assets/slide-13.png" alt="Go-No Gages" loading="lazy" />
+              <img src="/newhanam/assets/slide-13.png" alt="Go-No Gages" loading="lazy" />
             </figure>
           </div>
         </div>
@@ -255,7 +261,7 @@
         </div>
         <div id="customers-list" class="customers-list"></div>
         <figure class="slide-figure reveal">
-          <img src="assets/slide-14.png" alt="Customers" loading="lazy" />
+          <img src="/newhanam/assets/slide-14.png" alt="Customers" loading="lazy" />
         </figure>
       </div>
     </section>
@@ -269,11 +275,11 @@
         <div class="cert-groups reveal">
           <div id="cert-group-1" class="cert-row"></div>
           <figure class="slide-figure slide-figure--sm">
-            <img src="assets/slide-15.png" alt="Certificates 1" loading="lazy" />
+            <img src="/newhanam/assets/slide-15.png" alt="Certificates 1" loading="lazy" />
           </figure>
           <div id="cert-group-2" class="cert-row"></div>
           <figure class="slide-figure slide-figure--sm">
-            <img src="assets/slide-16.png" alt="Certificates 2" loading="lazy" />
+            <img src="/newhanam/assets/slide-16.png" alt="Certificates 2" loading="lazy" />
           </figure>
         </div>
       </div>
@@ -288,15 +294,15 @@
         <div class="factory-grid reveal">
           <figure class="slide-figure">
             <figcaption data-i18n="factory.a">Factory A</figcaption>
-            <img src="assets/slide-17.png" alt="Factory A" loading="lazy" />
+            <img src="/newhanam/assets/slide-17.png" alt="Factory A" loading="lazy" />
           </figure>
           <figure class="slide-figure">
             <figcaption data-i18n="factory.b1">Factory B – 1F</figcaption>
-            <img src="assets/slide-18.png" alt="Factory B 1F" loading="lazy" />
+            <img src="/newhanam/assets/slide-18.png" alt="Factory B 1F" loading="lazy" />
           </figure>
           <figure class="slide-figure factory-figure--wide">
             <figcaption><span data-i18n="factory.b2">Factory B – 2F</span> · <span data-i18n="factory.b3">Factory B – 3F</span></figcaption>
-            <img src="assets/slide-19.png" alt="Factory B 2F and 3F" loading="lazy" />
+            <img src="/newhanam/assets/slide-19.png" alt="Factory B 2F and 3F" loading="lazy" />
           </figure>
         </div>
       </div>
@@ -311,7 +317,7 @@
     </div>
   </footer>
 
-  <script src="i18n.js"></script>
-  <script src="script.js"></script>
+  <script src="/newhanam/i18n.js"></script>
+  <script src="/newhanam/script.js"></script>
 </body>
 </html>

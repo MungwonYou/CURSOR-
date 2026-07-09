@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/newhanam",
+      "destination": "/newhanam/",
+      "permanent": true
+    }
+  ]
+}

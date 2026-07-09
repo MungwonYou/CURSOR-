@@ -8,7 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
   renderDynamicContent();
 });
 
-let currentLang = localStorage.getItem('nh-lang') || 'en';
+let currentLang = 'en';
+try {
+  currentLang = localStorage.getItem('nh-lang') || 'en';
+} catch (_) {
+  currentLang = 'en';
+}
 
 function t(key) {
   const keys = key.split('.');
@@ -27,7 +32,9 @@ function initLanguage() {
 function setLanguage(lang, save = true) {
   if (!NH_I18N[lang]) return;
   currentLang = lang;
-  if (save) localStorage.setItem('nh-lang', lang);
+  if (save) {
+    try { localStorage.setItem('nh-lang', lang); } catch (_) { /* private mode */ }
+  }
   document.documentElement.lang = lang === 'vi' ? 'vi' : lang === 'ko' ? 'ko' : 'en';
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {
@@ -182,6 +189,7 @@ function initMobileMenu() {
     const open = menu.classList.toggle('open');
     toggle.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('menu-open', open);
   });
 
   menu.querySelectorAll('a').forEach((link) => {
@@ -189,6 +197,7 @@ function initMobileMenu() {
       menu.classList.remove('open');
       toggle.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
     });
   });
 }
