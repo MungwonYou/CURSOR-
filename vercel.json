@@ -35,22 +35,5 @@
       "destination": "/wons-eportfolio/",
       "permanent": true
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "wons-eportfolio.vercel.app" }],
-      "destination": "/wons-eportfolio/:path*"
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "stock-predict.vercel.app" }],
-      "destination": "/stock-predict/:path*"
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "2026-newhanam.vercel.app" }],
-      "destination": "/Newhanam/:path*"
-    }
   ]
 }
