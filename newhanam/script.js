@@ -59,7 +59,6 @@ function setLanguage(lang, save = true) {
 
 function renderDynamicContent() {
   renderHistory();
-  renderOrgCharts();
   renderAffiliates();
   renderProducts();
   renderEquipmentTables();
@@ -68,168 +67,48 @@ function renderDynamicContent() {
   initSalesChart();
 }
 
-function renderOrgCharts() {
-  renderTaehwaOrg();
-  renderNewhanamOrg();
-}
-
-function orgPhoto(id, alt) {
-  if (!id) return '';
-  return `<img src="/newhanam/assets/people/${id}.png" alt="${alt || ''}" class="org-photo" loading="lazy" width="72" height="84" />`;
-}
-
-function orgPersonCard(roleKey, person, extraClass = '') {
-  return `
-    <div class="org-person ${extraClass}">
-      ${orgPhoto(person.photo, person.name)}
-      <div class="org-person-text">
-        <span class="org-role">${t(roleKey)}</span>
-        <strong>${person.name}</strong>
-      </div>
-    </div>`;
-}
-
-function renderTaehwaOrg() {
-  const el = document.getElementById('taehwa-org');
-  if (!el) return;
-  const d = ORG_DATA.taehwa;
-
-  const domesticHtml = d.domestic.map((div) => `
-    <div class="org-division">
-      <div class="org-division-head">${t(`org.${div.key}`)} <span>(${div.count})</span></div>
-      <ul class="org-chip-list">${div.items.map((item) => `<li>${item}</li>`).join('')}</ul>
-    </div>
-  `).join('');
-
-  const overseasHtml = d.overseas.regions.map((region) => `
-    <div class="org-region">
-      <div class="org-region-head">${region.country}</div>
-      <ul class="org-chip-list">
-        ${region.items.map((item) => {
-          const hl = item === region.highlight ? ' org-chip--highlight' : '';
-          return `<li class="${hl}">${item}</li>`;
-        }).join('')}
-      </ul>
-    </div>
-  `).join('');
-
-  el.innerHTML = `
-    <div class="org-tree">
-      <div class="org-level org-level--top">
-        ${orgPersonCard('org.chairman', d.chairman, 'org-person--chairman')}
-        <div class="org-connector-v"></div>
-        ${orgPersonCard('org.viceChairman', d.viceChairman, 'org-person--vice')}
-      </div>
-      <div class="org-level org-level--centers">
-        ${d.centers.map((c) => `
-          <div class="org-center org-center--${c.id}">${t(`org.${c.key}`)}</div>
-        `).join('')}
-      </div>
-      <div class="org-split">
-        <div class="org-split-col">
-          <h4 class="org-split-title">${t('org.domestic')}</h4>
-          <div class="org-division-grid">${domesticHtml}</div>
-        </div>
-        <div class="org-split-col">
-          <h4 class="org-split-title">${t('org.overseas')} (${d.overseas.count})</h4>
-          <div class="org-region-grid">${overseasHtml}</div>
-        </div>
-      </div>
-    </div>`;
-}
-
-function renderNewhanamOrg() {
-  const el = document.getElementById('newhanam-org');
-  if (!el) return;
-  const d = ORG_DATA.newhanam;
-  const hc = d.headcount;
-
-  const adminRows = hc.admin.map(([label, count]) => `<tr><td>${label}</td><td>${count}</td></tr>`).join('');
-  const p1Rows = hc.production1.items.map(([label, count]) => `<tr><td>${label}</td><td>${count}</td></tr>`).join('');
-  const p2Rows = hc.production2.items.map(([label, count]) => `<tr><td>${label}</td><td>${count}</td></tr>`).join('');
-  const supRows = hc.support.map(([label, count]) => `<tr><td>${label}</td><td>${count}</td></tr>`).join('');
-
-  const teamsHtml = d.teams.map((team) => {
-    const leaderHtml = team.leader
-      ? `<div class="org-team-leader">
-          ${orgPhoto(team.leader.photo, team.leader.name)}
-          <div><span>${t(`org.${team.leader.rankKey}`)}</span><strong>${team.leader.name}</strong></div>
-        </div>`
-      : '';
-    const unitsHtml = team.units.map((unit) => `
-      <article class="org-unit">
-        <header class="org-unit-head org-unit-head--${team.tone}">
-          <div>
-            <h5>${t(`org.${unit.key}`)}</h5>
-            <span>${t(`org.${unit.leader.rankKey}`)} · ${unit.leader.name}</span>
-          </div>
-        </header>
-        ${orgPhoto(unit.leader.photo, unit.leader.name)}
-        <div class="org-unit-body">
-          <span class="org-unit-label">${t('org.responsibilities')}</span>
-          <ul>${unit.tasks.map((task) => `<li>${task}</li>`).join('')}</ul>
-        </div>
-      </article>
-    `).join('');
-
-    return `
-      <section class="org-team org-team--${team.tone}">
-        <header class="org-team-header">
-          <h4>${t(`org.${team.key}`)}</h4>
-          ${leaderHtml}
-        </header>
-        <div class="org-unit-grid">${unitsHtml}</div>
-      </section>`;
-  }).join('');
-
-  el.innerHTML = `
-    <div class="nh-org">
-      <div class="nh-org-meta">
-        <span>${t('org.effectiveDate')}: ${d.effectiveDate}</span>
-      </div>
-      <div class="nh-headcount">
-        <h4>${t('org.headcountTitle')} · ${t('org.headcountTotal')} <strong>${hc.total}</strong></h4>
-        <div class="nh-headcount-grid">
-          <div class="nh-hc-table">
-            <table class="data-table data-table--compact">
-              <tbody>${adminRows}</tbody>
-            </table>
-          </div>
-          <div class="nh-hc-table">
-            <div class="nh-hc-group-title">${t('org.production1Group')} (${hc.production1.total})</div>
-            <table class="data-table data-table--compact"><tbody>${p1Rows}</tbody></table>
-          </div>
-          <div class="nh-hc-table">
-            <div class="nh-hc-group-title">${t('org.production2Group')} (${hc.production2.total})</div>
-            <table class="data-table data-table--compact"><tbody>${p2Rows}</tbody></table>
-          </div>
-          <div class="nh-hc-table">
-            <div class="nh-hc-group-title">${t('org.supportGroup')}</div>
-            <table class="data-table data-table--compact"><tbody>${supRows}</tbody></table>
-          </div>
-        </div>
-      </div>
-      <div class="nh-gm-card">
-        ${orgPhoto(d.gm.photo, d.gm.name)}
-        <span class="org-role">${t('org.generalManager')}</span>
-        <strong>${d.gm.name}</strong>
-        <span class="nh-gm-sub">${d.gm.subtitle}</span>
-      </div>
-      <div class="nh-teams">${teamsHtml}</div>
-    </div>`;
-}
-
 function renderHistory() {
   const container = document.getElementById('history-list');
   if (!container) return;
-  container.innerHTML = t('history.items')
-    .map(([date, text]) => `
-      <article class="history-item reveal">
-        ${date ? `<time class="history-date">${date}</time>` : '<span class="history-date history-date--empty"></span>'}
-        <p class="history-text">${text}</p>
-      </article>
-    `)
-    .join('');
+  const eras = t('history.eras');
+  if (!Array.isArray(eras)) return;
+
+  const icons = [
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11H4z"/><path d="M9 20v-6h6v6"/></svg>',
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>',
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="10" rx="1"/><path d="M7 7V5h10v2M8 17v2M16 17v2"/></svg>',
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 5v2M12 17v2M5 12h2M17 12h2"/></svg>',
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16M6 18V9l6-4 6 4v9"/><path d="M10 18v-5h4v5"/></svg>',
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14h8l2 6H7l-2-6z"/><path d="M13 8a4 4 0 1 0-1 2.6"/><path d="M15 4v4h4"/></svg>',
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.5H20l-4.4 3.2 1.7 5.3L12 14.8 6.7 17l1.7-5.3L4 8.5h6.2L12 3z"/></svg>',
+  ];
+
+  container.innerHTML = `
+    <div class="ht-rail">
+      ${eras.map((era, i) => {
+        const side = i % 2 === 0 ? 'above' : 'below';
+        const [year, month = ''] = String(era.date).split('.');
+        const title = era.items[0] || '';
+        const rest = era.items.slice(1);
+        const label = title.length > 22 ? `${title.slice(0, 20)}…` : title;
+        return `
+          <article class="ht-step ht-step--${side} reveal" data-tone="${i % 7}" style="--i:${i}">
+            <div class="ht-detail">
+              <h4 class="ht-title">${title}</h4>
+              ${rest.length
+                ? `<ul class="ht-list">${rest.map((item) => `<li>${item}</li>`).join('')}</ul>`
+                : `<p class="ht-body">${era.date}</p>`}
+            </div>
+            <div class="ht-band">
+              <span class="ht-year">${year}</span>
+              <span class="ht-month">${month ? `.${month}` : ''}</span>
+              <span class="ht-icon">${icons[i % icons.length]}</span>
+              <span class="ht-label">${label}</span>
+            </div>
+          </article>`;
+      }).join('')}
+    </div>
+  `;
   observeReveals(container.querySelectorAll('.reveal'));
 }
 
@@ -271,9 +150,15 @@ function renderEquipmentTables() {
 
   const measure = document.getElementById('equipment-measure');
   if (measure) {
+    const cols = t('equipment.measureCols');
     measure.innerHTML = `
-      <table class="data-table data-table--compact">
-        <thead><tr><th>Name</th><th>Range</th><th>Q'ty</th></tr></thead>
+      <table class="data-table data-table--compact data-table--measure">
+        <colgroup>
+          <col class="col-name" />
+          <col class="col-range" />
+          <col class="col-qty" />
+        </colgroup>
+        <thead><tr><th>${cols[0]}</th><th>${cols[1]}</th><th>${cols[2]}</th></tr></thead>
         <tbody>${t('equipment.measureRows').map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</tbody>
         <tfoot><tr><td colspan="3" class="table-total">${t('equipment.measureTotal')}</td></tr></tfoot>
       </table>`;
@@ -281,9 +166,14 @@ function renderEquipmentTables() {
 
   const gauge = document.getElementById('equipment-gauge');
   if (gauge) {
+    const cols = t('equipment.gaugeCols');
     gauge.innerHTML = `
-      <table class="data-table data-table--compact">
-        <thead><tr><th>Go-No Gages</th><th>Q'ty</th></tr></thead>
+      <table class="data-table data-table--compact data-table--gauge">
+        <colgroup>
+          <col class="col-name" />
+          <col class="col-qty" />
+        </colgroup>
+        <thead><tr><th>${cols[0]}</th><th>${cols[1]}</th></tr></thead>
         <tbody>${t('equipment.gaugeRows').map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</tbody>
         <tfoot><tr><td colspan="2" class="table-total">${t('equipment.gaugeTotal')}</td></tr></tfoot>
       </table>`;

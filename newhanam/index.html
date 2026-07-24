@@ -88,59 +88,20 @@
           <span class="section-num">01</span>
           <h2 class="section-title" data-i18n="company.title">Company Information</h2>
         </div>
-        <div class="info-grid reveal">
-          <div class="info-card">
-            <span class="info-label" data-i18n="company.director">General Director</span>
-            <span class="info-value" data-i18n="company.directorVal">Mr. Kim Sang Chul</span>
-          </div>
-          <div class="info-card">
-            <span class="info-label" data-i18n="company.name">Company Name</span>
-            <span class="info-value" data-i18n="company.nameVal">NEW-HANAM</span>
-          </div>
-          <div class="info-card">
-            <span class="info-label" data-i18n="company.established">Date of Establishment</span>
-            <span class="info-value" data-i18n="company.establishedVal">2015.12.08</span>
-          </div>
-          <div class="info-card info-card--wide">
-            <span class="info-label" data-i18n="company.address">Address</span>
-            <span class="info-value" data-i18n="company.addressVal">Saigon Hi-Tech Park Industrial Zone, Ho Chi Minh City, Vietnam</span>
-          </div>
-          <div class="info-card">
-            <span class="info-label" data-i18n="company.employees">Number of Employees</span>
-            <span class="info-value" data-i18n="company.employeesVal">395</span>
-          </div>
-          <div class="info-card info-card--wide">
-            <span class="info-label" data-i18n="company.products">Main Products</span>
-            <span class="info-value" data-i18n="company.productsVal">Vacuum Cleaner Motor Assemblies, Press Part, Injection product, DD Motor, Air Conditioner Motor…</span>
-          </div>
-          <div class="info-card">
-            <span class="info-label" data-i18n="company.land">Land Area</span>
-            <span class="info-value" data-i18n="company.landVal">30,000㎡</span>
-          </div>
-          <div class="info-card">
-            <span class="info-label">Factory</span>
-            <span class="info-value"><span data-i18n="company.factoryA">Factory A: 6,962㎡ (1F)</span><br><span data-i18n="company.factoryB">Factory B: 7,835㎡ (3F)</span></span>
-          </div>
-        </div>
         <figure class="slide-figure reveal">
           <img src="/newhanam/assets/slide-03.png" alt="Company Information" loading="lazy" />
-          <figcaption data-i18n="slide">Original slide</figcaption>
         </figure>
       </div>
     </section>
 
-    <section id="history" class="section section--alt">
+    <section id="history" class="section section--history">
       <div class="container">
         <div class="section-head reveal">
           <span class="section-num">02</span>
           <h2 class="section-title" data-i18n="history.title">Company History</h2>
         </div>
-        <div id="history-list" class="history-list"></div>
-        <figure class="slide-figure reveal">
-          <img src="/newhanam/assets/slide-04.png" alt="Company History" loading="lazy" />
-          <figcaption data-i18n="slide">Original slide</figcaption>
-        </figure>
       </div>
+      <div id="history-list" class="history-infographic reveal"></div>
     </section>
 
     <section id="organization" class="section">
@@ -152,12 +113,16 @@
         <div class="org-block reveal">
           <h3 class="org-title" data-i18n="org.taehwaTitle">Organization Chart – Taehwa Group</h3>
           <p class="org-desc" data-i18n="org.taehwaDesc">Global manufacturing network across domestic and overseas subsidiaries.</p>
-          <div id="taehwa-org" class="org-chart org-chart--taehwa"></div>
+          <figure class="slide-figure">
+            <img src="/newhanam/assets/slide-05.png" alt="Taehwa Group Organization" loading="lazy" />
+          </figure>
         </div>
         <div class="org-block reveal">
           <h3 class="org-title" data-i18n="org.newhanamTitle">Organization Chart: NEW-HANAM</h3>
           <p class="org-desc" data-i18n="org.newhanamDesc">Operational structure of NEW-HANAM Vietnam.</p>
-          <div id="newhanam-org" class="org-chart org-chart--newhanam"></div>
+          <figure class="slide-figure">
+            <img src="/newhanam/assets/org-newhanam.png" alt="NEW-HANAM Organization" loading="lazy" />
+          </figure>
         </div>
       </div>
     </section>
@@ -168,18 +133,18 @@
           <span class="section-num">04</span>
           <h2 class="section-title" data-i18n="nav.affiliates">Affiliated Companies</h2>
         </div>
-        <div class="affiliates-grid reveal">
-          <div class="affiliate-col">
+        <div class="affiliates-stack reveal">
+          <div class="affiliate-block">
             <h3 data-i18n="affiliates.domesticTitle">Affiliated Companies (Domestic)</h3>
-            <ul id="affiliates-domestic" class="affiliate-list"></ul>
-            <figure class="slide-figure slide-figure--sm">
+            <ul id="affiliates-domestic" class="affiliate-list affiliate-list--wide"></ul>
+            <figure class="slide-figure affiliate-map affiliate-map--full">
               <img src="/newhanam/assets/slide-07.png" alt="Domestic Affiliates" loading="lazy" />
             </figure>
           </div>
-          <div class="affiliate-col">
+          <div class="affiliate-block affiliate-block--overseas">
             <h3 data-i18n="affiliates.overseasTitle">Affiliated Companies (Overseas)</h3>
-            <ul id="affiliates-overseas" class="affiliate-list"></ul>
-            <figure class="slide-figure slide-figure--sm">
+            <ul id="affiliates-overseas" class="affiliate-list affiliate-list--wide"></ul>
+            <figure class="slide-figure affiliate-map affiliate-map--full">
               <img src="/newhanam/assets/slide-08.png" alt="Overseas Affiliates" loading="lazy" />
             </figure>
           </div>
@@ -201,7 +166,7 @@
       </div>
     </section>
 
-    <section id="sales" class="section section--dark">
+    <section id="sales" class="section section--sales">
       <div class="container">
         <div class="section-head reveal">
           <span class="section-num">06</span>
@@ -230,18 +195,18 @@
         <figure class="slide-figure reveal">
           <img src="/newhanam/assets/slide-11.png" alt="Equipment" loading="lazy" />
         </figure>
-        <div class="equip-grid reveal">
-          <div>
+        <div class="equip-stack reveal">
+          <div class="equip-block">
             <h3 class="equip-subtitle" data-i18n="equipment.measureTitle">Measuring Instruments</h3>
             <div id="equipment-measure" class="table-wrap"></div>
-            <figure class="slide-figure slide-figure--sm">
+            <figure class="slide-figure equip-slide">
               <img src="/newhanam/assets/slide-12.png" alt="Measuring Equipment" loading="lazy" />
             </figure>
           </div>
-          <div>
+          <div class="equip-block">
             <h3 class="equip-subtitle" data-i18n="equipment.gaugeTitle">Go-No Gages & Time Test Jig</h3>
             <div id="equipment-gauge" class="table-wrap"></div>
-            <figure class="slide-figure slide-figure--sm">
+            <figure class="slide-figure equip-slide">
               <img src="/newhanam/assets/slide-13.png" alt="Go-No Gages" loading="lazy" />
             </figure>
           </div>
@@ -314,7 +279,6 @@
   </footer>
 
   <script src="/newhanam/i18n.js"></script>
-  <script src="/newhanam/org-data.js"></script>
   <script src="/newhanam/script.js"></script>
 </body>
 </html>

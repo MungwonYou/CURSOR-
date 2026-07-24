@@ -1,45 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
+  initI18n();
   initNavbar();
   initMobileMenu();
   initScrollReveal();
   initStarRatings();
   initSkillBars();
-  initSmoothScroll();
+  initActiveNav();
 });
 
-/** Navbar scroll effect */
 function initNavbar() {
   const navbar = document.getElementById('navbar');
-
-  const handleScroll = () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  };
-
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
+  const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 
-/** Mobile menu toggle */
 function initMobileMenu() {
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
   const links = document.querySelectorAll('.mobile-link');
 
+  if (!toggle || !menu) return;
+
   toggle.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
+    const open = menu.classList.toggle('hidden') === false;
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
   });
 
   links.forEach((link) => {
     link.addEventListener('click', () => {
       menu.classList.add('hidden');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
     });
   });
 }
 
-/** Intersection Observer for scroll reveal */
 function initScrollReveal() {
-  const reveals = document.querySelectorAll('.reveal');
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -49,32 +47,25 @@ function initScrollReveal() {
         }
       });
     },
-    { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
   );
 
-  reveals.forEach((el) => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 }
 
-/** Render star ratings from data-level attribute */
 function initStarRatings() {
   document.querySelectorAll('.star-rating').forEach((el) => {
     const level = parseInt(el.dataset.level, 10);
-    const filled = '★'.repeat(level);
-    const empty = '☆'.repeat(5 - level);
-    el.textContent = filled + empty;
+    el.textContent = '★'.repeat(level) + '☆'.repeat(5 - level);
   });
 }
 
-/** Animate skill bars when visible */
 function initSkillBars() {
-  const fills = document.querySelectorAll('.skill-fill');
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const width = entry.target.dataset.width;
-          entry.target.style.setProperty('--fill-width', `${width}%`);
+          entry.target.style.setProperty('--fill-width', `${entry.target.dataset.width}%`);
           entry.target.classList.add('animated');
           observer.unobserve(entry.target);
         }
@@ -83,27 +74,25 @@ function initSkillBars() {
     { threshold: 0.5 }
   );
 
-  fills.forEach((fill) => observer.observe(fill));
+  document.querySelectorAll('.skill-fill').forEach((fill) => observer.observe(fill));
 }
 
-/** Highlight active nav link on scroll */
-function initSmoothScroll() {
+function initActiveNav() {
   const sections = document.querySelectorAll('section[id], header[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const links = document.querySelectorAll('.nav-link, .mobile-link');
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach((link) => {
-            const isActive = link.getAttribute('href') === `#${id}`;
-            link.classList.toggle('active', isActive);
+          const id = entry.target.id;
+          links.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
           });
         }
       });
     },
-    { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' }
+    { threshold: 0.25, rootMargin: '-70px 0px -55% 0px' }
   );
 
   sections.forEach((section) => observer.observe(section));

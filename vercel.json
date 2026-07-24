@@ -4,6 +4,16 @@
       "source": "/newhanam",
       "destination": "/newhanam/",
       "permanent": true
+    },
+    {
+      "source": "/stock-predict",
+      "destination": "/stock%20predict/",
+      "permanent": false
+    },
+    {
+      "source": "/stock predict",
+      "destination": "/stock%20predict/",
+      "permanent": true
     }
   ]
 }

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Predict AI</title>
+  <meta name="description" content="기술적 지표 앙상블 기반 주가 방향·목표가 예측 데모. 교육용이며 투자 자문이 아닙니다." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="./">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <strong>STOCK PREDICT</strong>
+        <em>AI</em>
+      </span>
+    </a>
+    <p class="topbar-note">앙상블 시그널 · 교육용 데모</p>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="hero-brand">STOCK PREDICT</h1>
+      <p class="hero-line">티커를 넣으면 추세·모멘텀·RSI를 합쳐 다음 구간을 그립니다.</p>
+      <form class="search-form" id="search-form" autocomplete="off">
+        <label class="sr-only" for="ticker-input">티커 심볼</label>
+        <input
+          id="ticker-input"
+          name="ticker"
+          type="text"
+          value="AAPL"
+          maxlength="12"
+          spellcheck="false"
+          placeholder="AAPL, NVDA, 005930.KS…"
+        />
+        <label class="horizon-wrap" for="horizon">
+          <span>예측</span>
+          <select id="horizon" name="horizon">
+            <option value="7">7일</option>
+            <option value="14" selected>14일</option>
+            <option value="30">30일</option>
+          </select>
+        </label>
+        <button type="submit" class="btn-predict" id="predict-btn">
+          <span>예측 실행</span>
+        </button>
+      </form>
+      <div class="quick-picks" id="quick-picks" role="group" aria-label="빠른 티커">
+        <button type="button" data-ticker="AAPL">AAPL</button>
+        <button type="button" data-ticker="NVDA">NVDA</button>
+        <button type="button" data-ticker="TSLA">TSLA</button>
+        <button type="button" data-ticker="MSFT">MSFT</button>
+        <button type="button" data-ticker="005930.KS">삼성전자</button>
+        <button type="button" data-ticker="000660.KS">SK하이닉스</button>
+      </div>
+    </section>
+
+    <section class="workspace" id="workspace" hidden>
+      <div class="chart-panel">
+        <div class="chart-head">
+          <div>
+            <p class="meta" id="meta-symbol">—</p>
+            <h2 class="price-row">
+              <span id="last-price">—</span>
+              <span class="chg" id="last-chg">—</span>
+            </h2>
+          </div>
+          <div class="chart-legend" aria-hidden="true">
+            <span class="leg leg-hist">실적</span>
+            <span class="leg leg-pred">예측</span>
+          </div>
+        </div>
+        <div class="chart-stage">
+          <canvas id="price-chart" width="960" height="420"></canvas>
+          <div class="chart-status" id="chart-status" hidden></div>
+        </div>
+      </div>
+
+      <aside class="signal-panel" aria-live="polite">
+        <p class="panel-label">AI 시그널</p>
+        <p class="signal-badge" id="signal-badge">—</p>
+        <dl class="signal-stats">
+          <div>
+            <dt>방향</dt>
+            <dd id="stat-direction">—</dd>
+          </div>
+          <div>
+            <dt>목표가</dt>
+            <dd id="stat-target">—</dd>
+          </div>
+          <div>
+            <dt>예상 변동</dt>
+            <dd id="stat-move">—</dd>
+          </div>
+          <div>
+            <dt>신뢰도</dt>
+            <dd id="stat-confidence">—</dd>
+          </div>
+        </dl>
+        <div class="confidence-meter" aria-hidden="true">
+          <div class="confidence-fill" id="confidence-fill"></div>
+        </div>
+        <p class="signal-summary" id="signal-summary"></p>
+      </aside>
+    </section>
+
+    <section class="indicators" id="indicators" hidden>
+      <h2 class="section-title">지표 분해</h2>
+      <p class="section-lead">예측에 쓰인 기술적 시그널 가중치입니다.</p>
+      <ul class="indicator-grid" id="indicator-grid"></ul>
+    </section>
+
+    <p class="disclaimer">
+      본 서비스는 교육·데모 목적입니다. 과거 가격과 기술적 지표만으로 산출되며
+      <strong>투자 자문이나 수익을 보장하지 않습니다.</strong>
+    </p>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
