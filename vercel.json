@@ -1,11 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/Newhanam",
-      "destination": "/Newhanam/",
-      "permanent": true
-    },
-    {
       "source": "/newhanam",
       "destination": "/Newhanam/",
       "permanent": true
@@ -16,14 +11,46 @@
       "permanent": true
     },
     {
-      "source": "/stock-predict",
-      "destination": "/stock%20predict/",
-      "permanent": false
+      "source": "/stock predict",
+      "destination": "/stock-predict/",
+      "permanent": true
     },
     {
-      "source": "/stock predict",
-      "destination": "/stock%20predict/",
+      "source": "/stock%20predict",
+      "destination": "/stock-predict/",
       "permanent": true
+    },
+    {
+      "source": "/stock%20predict/",
+      "destination": "/stock-predict/",
+      "permanent": true
+    },
+    {
+      "source": "/docs/portfoliowons",
+      "destination": "/wons-eportfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/docs/portfoliowons/",
+      "destination": "/wons-eportfolio/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "wons-eportfolio.vercel.app" }],
+      "destination": "/wons-eportfolio/:path*"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "stock-predict.vercel.app" }],
+      "destination": "/stock-predict/:path*"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "2026-newhanam.vercel.app" }],
+      "destination": "/Newhanam/:path*"
     }
   ]
 }

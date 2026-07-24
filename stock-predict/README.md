@@ -1,4 +1,4 @@
-# Stock Predict AI
+# stock-predict AI
 
 기술적 지표 앙상블로 주가 방향·목표가를 추정하는 교육용 데모입니다.
 

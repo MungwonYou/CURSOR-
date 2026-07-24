@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="유명원 — 대한민국 경제외교관을 꿈꾸는 성균관대학교 경제학과 학생. 국제협력, 리더십, 다국어 역량 포트폴리오" />
+  <title>wons-eportfolio | 유명원</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <nav id="navbar" class="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-dot"></span>
+        wons-eportfolio
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="#education" class="nav-link" data-i18n="nav.education">Education</a></li>
+        <li><a href="#experience" class="nav-link" data-i18n="nav.activities">Activities</a></li>
+        <li><a href="#awards" class="nav-link" data-i18n="nav.awards">Awards</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#vision" class="nav-link" data-i18n="nav.vision">Vision</a></li>
+      </ul>
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="ko" aria-pressed="true">KO</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" class="lang-btn" data-lang="vi" aria-pressed="false">VI</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact</a>
+      <button id="menu-toggle" class="menu-toggle" aria-label="메뉴" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="mobile-drawer hidden">
+      <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="ko" aria-pressed="true">KO</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" class="lang-btn" data-lang="vi" aria-pressed="false">VI</button>
+      </div>
+      <a href="#about" class="mobile-link" data-i18n="nav.about">About</a>
+      <a href="#education" class="mobile-link" data-i18n="nav.education">Education</a>
+      <a href="#experience" class="mobile-link" data-i18n="nav.activities">Activities</a>
+      <a href="#awards" class="mobile-link" data-i18n="nav.awards">Awards</a>
+      <a href="#skills" class="mobile-link" data-i18n="nav.skills">Skills</a>
+      <a href="#vision" class="mobile-link" data-i18n="nav.vision">Vision</a>
+      <a href="#contact" class="mobile-link" data-i18n="nav.contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <header id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="status-bar">
+            <span class="status-pill"><span class="pulse"></span> <span data-i18n="hero.status">협업 가능</span></span>
+            <span class="status-pill status-pill--mono">v2026.1</span>
+          </div>
+
+          <p class="hero-cmd"><span class="cmd-prefix">$</span> whoami</p>
+          <div class="hero-name-row">
+            <div class="hero-photo">
+              <div class="photo-glow"></div>
+              <img src="assets/profile.jpg" alt="유명원" width="112" height="149" />
+            </div>
+            <div>
+              <h1 class="hero-title">유명원</h1>
+              <p class="hero-sub">Mung Won You</p>
+            </div>
+          </div>
+
+          <p class="hero-output">
+            <span class="gradient-text" data-i18n="hero.role">대한민국 경제외교관</span>
+            <span class="cursor-blink">|</span>
+          </p>
+          <p class="hero-desc" data-i18n="hero.desc">Bridging Nations Through Economic Cooperation</p>
+          <p class="hero-meta" data-i18n="hero.meta">성균관대학교 경제학과 · 국제협력 · 다국어 · 리더십</p>
+
+          <div class="chip-row">
+            <span class="chip" data-i18n="hero.chip1">🌐 3개 국어</span>
+            <span class="chip" data-i18n="hero.chip2">🤖 AI 활용</span>
+            <span class="chip" data-i18n="hero.chip3">📍 서울, KR</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#about" class="btn btn-glow" data-i18n="hero.btnProfile">프로필 보기</a>
+            <a href="https://wons-eportfolio.notion.site/38f52022a88b80a69a37d88bc05e07d4" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-i18n="hero.btnNotion">Notion →</a>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal reveal-delay-1">
+          <div class="panel-header">
+            <span class="panel-dot"></span>
+            <span class="panel-dot"></span>
+            <span class="panel-dot"></span>
+            <span class="panel-title">profile.json</span>
+          </div>
+          <div class="panel-body">
+            <div class="metric-card">
+              <span class="metric-key">university</span>
+              <span class="metric-val" data-i18n="hero.uniVal">성균관대학교</span>
+              <span class="metric-sub" data-i18n="hero.uniSub">경제학과 · 2025 —</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-key">leadership</span>
+              <span class="metric-val">AIESEC TL</span>
+              <span class="metric-sub" data-i18n="hero.leadSub">국제리더십협회 대외협력부서</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-key">recognition</span>
+              <span class="metric-val">President's List</span>
+              <span class="metric-sub" data-i18n="hero.recSub">총장상 · 7기 운영진 회장</span>
+            </div>
+            <div class="metric-card metric-card--accent">
+              <span class="metric-key">stack</span>
+              <div class="stack-tags">
+                <span>Notion</span><span>Cursor AI</span><span>SDGs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// 01 · profile</span>
+          <h2 class="section-title" data-i18n="about.title">About Me</h2>
+        </div>
+        <div class="glass-card reveal">
+          <p data-i18n-html="about.p1">호치민시한국국제학교에서의 해외 성장 경험과 성균관대학교 경제학과에서의 학문적 훈련을 바탕으로, <strong>대한민국 경제외교관</strong>을 목표로 성장하고 있습니다.</p>
+          <p data-i18n-html="about.p2">AIESEC 대외협력 팀리더, President's List 운영진 회장, UN SDGs Ideathon 본선 진출 등 학내·대외 활동을 통해 리더십과 협업 역량을 쌓아왔습니다.</p>
+          <div class="chip-row">
+            <span class="chip chip--violet" data-i18n="about.tag1">국제협력</span>
+            <span class="chip chip--cyan" data-i18n="about.tag2">경제외교</span>
+            <span class="chip chip--violet" data-i18n="about.tag3">다국어</span>
+            <span class="chip chip--cyan" data-i18n="about.tag4">리더십</span>
+            <span class="chip chip--violet" data-i18n="about.tag5">SDGs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// 02 · education</span>
+          <h2 class="section-title" data-i18n="education.title">Academic Background</h2>
+        </div>
+        <div class="card-grid card-grid--2">
+          <article class="glass-card reveal">
+            <span class="card-badge" data-i18n="education.skkuBadge">SKKU · 재학 중</span>
+            <h3>B.A. in Economics</h3>
+            <p class="card-main" data-i18n="education.skkuMain">성균관대학교 · Sungkyunkwan University</p>
+            <p class="card-sub" data-i18n="education.skkuSub">경제학과</p>
+            <time class="card-time" data-i18n="education.present">2025.03 — 현재</time>
+          </article>
+          <article class="glass-card reveal reveal-delay-1">
+            <span class="card-badge card-badge--cyan" data-i18n="education.kisBadge">KIS · 고등학교</span>
+            <h3>Korean International School HCMC</h3>
+            <p class="card-main" data-i18n="education.kisMain">호치민시한국국제학교</p>
+            <p class="card-sub" data-i18n="education.kisSub">베트남에서의 국제 교육 경험</p>
+            <time class="card-time">2013.03 — 2025.01</time>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// 03 · experience</span>
+          <h2 class="section-title" data-i18n="experience.title">Activities &amp; Leadership</h2>
+          <p class="section-desc" data-i18n="experience.desc">교과·비교과 활동과 대외 협력 경험</p>
+        </div>
+        <div class="exp-list" data-i18n-list="experience.items" data-i18n-type="exp">
+          <article class="exp-card reveal"><time>2026.07</time><div><h3>E-포트폴리오 역량 특강</h3><p>포트폴리오 역량 강화 프로그램 참여</p></div></article>
+          <article class="exp-card reveal"><time>2026.05</time><div><h3>Humans in Space Youth</h3><p>Intuitive Machines IM-3 미션달 착륙선 캠페인</p></div></article>
+          <article class="exp-card reveal"><time>2026.04 — 06</time><div><h3>Eco-Bridge Project</h3><p>이화여자대학교와의 환경·국제 협력 프로젝트</p></div></article>
+          <article class="exp-card reveal"><time>2026.04 —</time><div><h3>President's List 7기 운영진 회장</h3><p>성균관대학교 우수 학생 리더십 프로그램 운영</p></div></article>
+          <article class="exp-card reveal"><time>2025.09 —</time><div><h3>AIESEC 대외협력부서 팀리더 (TL)</h3><p>성균관대학교 국제리더십협회 · 대외 파트너십 및 협력 기획</p></div></article>
+          <article class="exp-card reveal"><time>2025.09</time><div><h3>UN SDGs Ideathon 본선 진출</h3><p>지속가능발전목표 기반 아이디어 경진대회</p></div></article>
+          <article class="exp-card reveal"><time>2025.08.26</time><div><h3>한-중남미 미래협력 포럼 참여</h3><p>국제 경제·외교 협력 포럼 참석</p></div></article>
+          <article class="exp-card reveal"><time>2025.07 — 2026.06</time><div><h3>방송연구학회 부학회장</h3><p>성균관대학교 · 미디어·커뮤니케이션 리더십</p></div></article>
+          <article class="exp-card reveal"><time>2025.03 — 2025.12</time><div><h3>대계열 융합 LC53 PeerLeader</h3><p>피어리더 · 학습 공동체 운영 및 멘토링</p></div></article>
+          <article class="exp-card reveal"><time>2025.03 — 2025.07</time><div><h3>경영대학 밴드 PARAN</h3><p>성균관대학교 · 팀 협업 및 문화 활동</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// 04 · awards</span>
+          <h2 class="section-title" data-i18n="awards.title">Honors &amp; Recognition</h2>
+        </div>
+        <div class="card-grid card-grid--4" data-i18n-list="awards.items" data-i18n-type="award">
+          <article class="award-card reveal"><span>2026</span><h3>학생성공 · 리더 장학금</h3></article>
+          <article class="award-card reveal reveal-delay-1"><span>2026.01</span><h3>W.NLDC 대외협력부서 장려상</h3></article>
+          <article class="award-card reveal"><span>2025.08</span><h3>학생성공 · 기숙사 장학금</h3></article>
+          <article class="award-card reveal reveal-delay-1"><span>2025</span><h3>President's List · 총장상</h3></article>
+          <article class="award-card reveal"><span>2025</span><h3>LC 포트폴리오 공모전 우수상</h3></article>
+          <article class="award-card reveal reveal-delay-1"><span>2025</span><h3>국가우수인재 인문100년 장학생 · 전액</h3><p>한국장학재단</p></article>
+          <article class="award-card reveal"><span>2025</span><h3>웰투시드림재단 청년 창업 4기 장학생</h3></article>
+          <article class="award-card reveal reveal-delay-1"><span>2024</span><h3>한국어-베트남어 문학 통번역 국제대회 우수상</h3><p>반랑대학교</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// 05 · skills</span>
+          <h2 class="section-title" data-i18n="skills.title">Languages &amp; Competencies</h2>
+        </div>
+        <div class="card-grid card-grid--2">
+          <div class="glass-card reveal">
+            <h3 class="card-heading" data-i18n="skills.langHeading">Language Proficiency</h3>
+            <div class="lang-row"><div><strong>Korean</strong><span data-i18n="skills.koSub">Native · 모국어</span></div><span class="star-rating" data-level="5"></span></div>
+            <div class="lang-row"><div><strong>Vietnamese</strong><span data-i18n="skills.viSub">Advanced · 베트남 거주</span></div><span class="star-rating" data-level="4"></span></div>
+            <div class="lang-row"><div><strong>English</strong><span data-i18n="skills.enSub">Intermediate · TOEFL/TOEIC</span></div><span class="star-rating" data-level="3"></span></div>
+          </div>
+          <div class="glass-card reveal reveal-delay-1">
+            <h3 class="card-heading" data-i18n="skills.compHeading">Core Competencies</h3>
+            <div class="skill-row"><div class="skill-top"><span data-i18n="skills.c1">국제협력 · 대외협력</span><span class="badge" data-i18n="skills.advanced">Advanced</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+            <div class="skill-row"><div class="skill-top"><span data-i18n="skills.c2">리더십 · 조직 운영</span><span class="badge" data-i18n="skills.advanced">Advanced</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+            <div class="skill-row"><div class="skill-top"><span data-i18n="skills.c3">경제·정책 분석</span><span class="badge badge--grow" data-i18n="skills.growing">Growing</span></div><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div></div>
+            <div class="skill-row"><div class="skill-top"><span data-i18n="skills.c4">통번역 · 크로스컬처</span><span class="badge" data-i18n="skills.advanced">Advanced</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vision" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// 06 · vision</span>
+          <h2 class="section-title" data-i18n="vision.title">Goals &amp; Principles</h2>
+        </div>
+        <div class="card-grid card-grid--2">
+          <article class="glass-card reveal">
+            <span class="vision-num">01</span>
+            <h3 data-i18n="vision.goalsTitle">목표 · Future Plans</h3>
+            <ul class="vision-list" data-i18n-list="vision.goals" data-i18n-type="vision-goals">
+              <li>경제학 전공 역량과 국제협력 경험을 바탕으로 경제외교 분야 전문가로 성장</li>
+              <li>다국어·다문화 역량을 활용한 통상·개발협력 정책 기여</li>
+              <li>SDGs와 지속가능한 국제 경제 협력 모델 탐구 및 실천</li>
+              <li>아시아-태평양 및 중남미 등 신흥시장 협력 네트워크 구축</li>
+            </ul>
+          </article>
+          <article class="glass-card reveal reveal-delay-1">
+            <span class="vision-num">02</span>
+            <h3 data-i18n="vision.valuesTitle">가치관 · Values</h3>
+            <ul class="vision-list" data-i18n-list="vision.values" data-i18n-type="vision-values">
+              <li><strong>글로벌 시민성</strong> — 국경을 넘어 공동 번영을 추구하는 협력 정신</li>
+              <li><strong>성실한 리더십</strong> — 조직과 공동체를 이끄는 책임감 있는 실천</li>
+              <li><strong>학문적 열정</strong> — 경제·정책 분야에 대한 끊임없는 학습과 탐구</li>
+              <li><strong>다양성 존중</strong> — 베트남·한국·국제 사회 경험에서 배운 포용적 시각</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <span class="section-tag">// contact</span>
+          <h2 class="contact-title" data-i18n="contact.title">Get in Touch</h2>
+          <p class="contact-desc" data-i18n="contact.desc">국제협력, 경제·외교 관련 프로젝트 및 협업 문의를 환영합니다.</p>
+          <div class="contact-grid">
+            <a href="tel:+821066446416" class="contact-cell"><span data-i18n="contact.tel">Tel</span>+82 10-6644-6416</a>
+            <a href="mailto:myungwon808@gmail.com" class="contact-cell"><span data-i18n="contact.email">Email</span>myungwon808@gmail.com</a>
+            <a href="https://wons-eportfolio.notion.site/38f52022a88b80a69a37d88bc05e07d4" target="_blank" rel="noopener noreferrer" class="contact-cell"><span data-i18n="contact.notion">Notion</span>wons-eportfolio.notion.site</a>
+            <div class="contact-cell"><span data-i18n="contact.location">Location</span><span class="contact-value" data-i18n="contact.locVal">Seoul, South Korea</span></div>
+          </div>
+          <p class="contact-born" data-i18n="contact.born">Born 2006.03.16</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p data-i18n="footer.line1">유명원 · Mung Won You — 대한민국 경제외교관</p>
+      <p class="footer-ai" data-i18n-html="footer.line2">Built with <span class="gradient-text">Cursor AI</span> · Sungkyunkwan University · Economics</p>
+      <p data-i18n="footer.line3">&copy; 2026 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

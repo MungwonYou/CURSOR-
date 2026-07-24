@@ -1,7 +1,7 @@
 const I18N = {
   ko: {
     meta: {
-      title: '유명원 | 대한민국 경제외교관',
+      title: 'wons-eportfolio | 유명원',
       description: '유명원 — 대한민국 경제외교관을 꿈꾸는 성균관대학교 경제학과 학생. 국제협력, 리더십, 다국어 역량 포트폴리오',
     },
     nav: { about: 'About', education: 'Education', activities: 'Activities', awards: 'Awards', skills: 'Skills', vision: 'Vision', contact: 'Contact', menu: '메뉴' },
@@ -108,7 +108,7 @@ const I18N = {
 
   en: {
     meta: {
-      title: 'Mung Won You | Aspiring Economic Diplomat',
+      title: 'wons-eportfolio | Mung Won You',
       description: 'Mung Won You — Economics student at Sungkyunkwan University aspiring to become a Korean economic diplomat. Portfolio showcasing international cooperation, leadership, and multilingual skills.',
     },
     nav: { about: 'About', education: 'Education', activities: 'Activities', awards: 'Awards', skills: 'Skills', vision: 'Vision', contact: 'Contact', menu: 'Menu' },
@@ -215,7 +215,7 @@ const I18N = {
 
   vi: {
     meta: {
-      title: 'Mung Won You | Ngoại giao kinh tế Hàn Quốc',
+      title: 'wons-eportfolio | Mung Won You',
       description: 'Mung Won You — Sinh viên Kinh tế Đại học Sungkyunkwan, hướng tới trở thành nhà ngoại giao kinh tế Hàn Quốc. Hợp tác quốc tế, lãnh đạo và đa ngôn ngữ.',
     },
     nav: { about: 'Giới thiệu', education: 'Học vấn', activities: 'Hoạt động', awards: 'Giải thưởng', skills: 'Kỹ năng', vision: 'Tầm nhìn', contact: 'Liên hệ', menu: 'Menu' },
