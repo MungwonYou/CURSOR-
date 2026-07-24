@@ -1,7 +1,7 @@
 const NH_I18N = {
   en: {
     meta: {
-      title: 'NEW-HANAM | Company Profile 2026',
+      title: 'Newhanam | Company Profile 2026',
       description: 'NEW-HANAM — Vacuum cleaner motor assemblies, press parts, injection products, DD motor, air conditioner motor manufacturer in Ho Chi Minh City, Vietnam.',
     },
     nav: {
@@ -18,7 +18,7 @@ const NH_I18N = {
     },
     hero: {
       badge: 'Company Profile 2026',
-      title: 'NEW-HANAM',
+      title: 'Newhanam',
       subtitle: 'Driven by Precision. Powered by Commitment.',
       update: 'Update: 10.06.2026',
       cta: 'Explore Profile',
@@ -28,7 +28,7 @@ const NH_I18N = {
       director: 'General Director',
       directorVal: 'Mr. Kim Sang Chul',
       name: 'Company Name',
-      nameVal: 'NEW-HANAM',
+      nameVal: 'Newhanam',
       established: 'Date of Establishment',
       establishedVal: '2015.12.08',
       address: 'Address',
@@ -186,13 +186,13 @@ const NH_I18N = {
     footer: {
       tagline: 'Driven by Precision. Powered by Commitment.',
       thanks: 'Thank you!',
-      copy: '© 2026 NEW-HANAM. All Rights Reserved.',
+      copy: '© 2026 Newhanam. All Rights Reserved.',
     },
     slide: 'Original slide',
   },
   ko: {
     meta: {
-      title: 'NEW-HANAM | 회사 소개 2026',
+      title: 'Newhanam | 회사 소개 2026',
       description: 'NEW-HANAM — 베트남 호치민 사이공 하이테크 공단 소재 진공청소기 모터, 프레스, 사출, DD모터, 에어컨 모터 제조기업',
     },
     nav: {
@@ -209,7 +209,7 @@ const NH_I18N = {
     },
     hero: {
       badge: '회사 소개 2026',
-      title: 'NEW-HANAM',
+      title: 'Newhanam',
       subtitle: '정밀함으로 움직이고, 헌신으로 완성합니다.',
       update: '업데이트: 2026.06.10',
       cta: '프로필 보기',
@@ -219,7 +219,7 @@ const NH_I18N = {
       director: '대표이사',
       directorVal: '김상철',
       name: '회사명',
-      nameVal: 'NEW-HANAM',
+      nameVal: 'Newhanam',
       established: '설립일',
       establishedVal: '2015.12.08',
       address: '주소',
@@ -377,13 +377,13 @@ const NH_I18N = {
     footer: {
       tagline: '정밀함으로 움직이고, 헌신으로 완성합니다.',
       thanks: '감사합니다!',
-      copy: '© 2026 NEW-HANAM. All Rights Reserved.',
+      copy: '© 2026 Newhanam. All Rights Reserved.',
     },
     slide: '원본 슬라이드',
   },
   vi: {
     meta: {
-      title: 'NEW-HANAM | Hồ sơ công ty 2026',
+      title: 'Newhanam | Hồ sơ công ty 2026',
       description: 'NEW-HANAM — Nhà sản xuất motor máy hút bụi, dập, nhựa, DD motor, motor điều hòa tại KCN Saigon Hi-Tech Park, TP.HCM, Việt Nam.',
     },
     nav: {
@@ -400,7 +400,7 @@ const NH_I18N = {
     },
     hero: {
       badge: 'Hồ sơ công ty 2026',
-      title: 'NEW-HANAM',
+      title: 'Newhanam',
       subtitle: 'Chính xác trong từng chi tiết. Cam kết trong từng sản phẩm.',
       update: 'Cập nhật: 10.06.2026',
       cta: 'Xem hồ sơ',
@@ -410,7 +410,7 @@ const NH_I18N = {
       director: 'Tổng Giám đốc',
       directorVal: 'Ông Kim Sang Chul',
       name: 'Tên công ty',
-      nameVal: 'NEW-HANAM',
+      nameVal: 'Newhanam',
       established: 'Ngày thành lập',
       establishedVal: '08.12.2015',
       address: 'Địa chỉ',
@@ -568,7 +568,7 @@ const NH_I18N = {
     footer: {
       tagline: 'Chính xác trong từng chi tiết. Cam kết trong từng sản phẩm.',
       thanks: 'Cảm ơn quý khách!',
-      copy: '© 2026 NEW-HANAM. All Rights Reserved.',
+      copy: '© 2026 Newhanam. All Rights Reserved.',
     },
     slide: 'Slide gốc',
   },

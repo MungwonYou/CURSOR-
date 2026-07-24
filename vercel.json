@@ -1,8 +1,18 @@
 {
   "redirects": [
     {
+      "source": "/Newhanam",
+      "destination": "/Newhanam/",
+      "permanent": true
+    },
+    {
       "source": "/newhanam",
-      "destination": "/newhanam/",
+      "destination": "/Newhanam/",
+      "permanent": true
+    },
+    {
+      "source": "/newhanam/",
+      "destination": "/Newhanam/",
       "permanent": true
     },
     {
